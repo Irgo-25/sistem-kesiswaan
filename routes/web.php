@@ -15,15 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login', [
-        'title'=> "Sistem Kesiswaan"
+        'title' => "Sistem Kesiswaan"
     ]);
 });
 Route::get('/register', function () {
     return view('register', [
-        'title'=> "Registrasi"
+        'title' => "Registrasi"
     ]);
 });
 
-Route::get('/Kesiswaan', function(){
-    return view('kesiswaan.Kesiswaan');
+Route::get('/Kesiswaan', function () {
+    return view('kesiswaan.index', [
+        'title' => 'Dashboard'
+    ]);
 });

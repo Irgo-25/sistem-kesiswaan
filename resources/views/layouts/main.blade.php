@@ -10,19 +10,18 @@
 </head>
 
 <body>
-    <div class="">
+    <nav class="bg-red-900 w-full p-3 top-0 fixed shadow-md z-40">
         @include('partials.header')
-    </div>
+    </nav>
 
-    <div>
+    <aside class="h-screen w-52 fixed top-0 left-0 z-30 ">
+        @include('partials.sidebar')
+    </aside>
+
+    <div class="ml-56
+        mt-24">
         @yield('content')
     </div>
-
-    <div>
-        @include('partials.sidebar')
-    </div>
-
-
 </body>
 
 </html>

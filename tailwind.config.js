@@ -7,7 +7,12 @@ module.exports = {
         "./node_modules/flowbite/**/*.js",
     ],
     theme: {
-        extend: {},
+
+        extend: {
+            fontFamily:{
+                'Lexend1': ['Lexend'],
+            },
+        },
     },
     plugins: ["flowbite/plugin"],
 };

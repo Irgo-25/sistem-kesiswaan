@@ -10,7 +10,7 @@ module.exports = {
 
         extend: {
             fontFamily:{
-                'Lexend1': ['Lexend'],
+                'Lexend': ['Lexend'],
             },
         },
     },

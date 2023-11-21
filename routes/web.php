@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +25,6 @@ Route::get('/register', function () {
         'title' => "Registrasi"
     ]);
 });
+Route::get('/Keuangan', function () {return view('Keuangan.index');});
 
-Route::get('/Kesiswaan', function () {
-    return view('kesiswaan.index', [
-        'title' => 'Dashboard'
-    ]);
-});
+Route::resource('/Siswa', SiswaController::class);

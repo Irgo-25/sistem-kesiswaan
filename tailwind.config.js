@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: [
         "./resources/**/*.blade.php",
@@ -7,15 +8,14 @@ module.exports = {
         "./node_modules/flowbite/**/*.js",
     ],
     theme: {
-
         extend: {
-            fontFamily:{
-                'Lexend': ['Lexend'],
+            fontFamily: {
+                Lexend: ["Lexend"],
             },
-            fontWeight:{
-                'Lexend1' : 100,
-                'Lexend4' : 400
-            }
+            colors: {
+                primary: "#FD8D14",
+                second: "#18495f",
+            },
         },
     },
     plugins: ["flowbite/plugin"],

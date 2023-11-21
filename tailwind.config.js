@@ -12,6 +12,10 @@ module.exports = {
             fontFamily:{
                 'Lexend': ['Lexend'],
             },
+            fontWeight:{
+                'Lexend1' : 100,
+                'Lexend4' : 400
+            }
         },
     },
     plugins: ["flowbite/plugin"],

@@ -7,7 +7,7 @@
 
     <div class="mr-5 ">
         <table class="w-full bg-slate-400 shadow-md rounded-md ">
-            <thead class="font-Lexend">
+            <thead class="font-Lexend font-Lexend4">
                 <tr>
                     <th>NIS</th>
                     <th>NAMA SISWA</th>
@@ -16,7 +16,7 @@
                     <th>UMUR</th>
                 </tr>
             </thead>
-            <tbody class="font-Lexend">
+            <tbody class="font-Lexend font-Lexend1">
                 <tr>
                     <th>465464</th>
                     <th>465464</th>

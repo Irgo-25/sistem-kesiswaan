@@ -6,7 +6,7 @@
     <div class="max-w-4xl p-3 bg-slate-400 rounded-md shadow-md relative">
         <form action="{{ route('Siswa.store') }}" method="POST">
             <div class="grid grid-cols-5 gap-2">
-                <div class="bg-red-600">
+                <div class="bg-red-600ss">
                     <label for="NIS" class="block">NIS1</label>
                     <input type="text" class="block p-1.5 w-full">
                 </div>

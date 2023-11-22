@@ -5008,7 +5008,9 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flowbite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flowbite */ "./node_modules/flowbite/lib/esm/index.js");
+/* harmony import */ var flowbite_datepicker__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flowbite-datepicker */ "./node_modules/flowbite-datepicker/js/main.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 /***/ }),
@@ -5046,6 +5048,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./node_modules/flowbite-datepicker/js/main.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/flowbite-datepicker/js/main.js ***!
+  \*****************************************************/
+/***/ (() => {
+
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'D:\\App\\laravel 8\\Sistem-Kesiswaan\\node_modules\\flowbite-datepicker\\js\\main.js'");
 
 /***/ }),
 

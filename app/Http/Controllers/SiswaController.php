@@ -41,7 +41,13 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'NIS'=> ['require', 'string','index'],
+            'nama_siswa' => ['require', 'string', 'max:60'],
+            'tempat_lahir' => ['require', 'string', 'max:50'],
+            'tanggal_lahir' => ['require', 'date'],
+            'umur' => ['required', 'interger']
+        ]);
     }
 
     /**

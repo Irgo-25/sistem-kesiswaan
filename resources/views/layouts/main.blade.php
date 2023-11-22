@@ -20,7 +20,7 @@
         @include('partials.sidebar')
     </aside>
 
-    <div class="ml-56 mt-24">
+    <div class="ml-56 mt-24 mr-4">
         @yield('content')
     </div>
 </body>

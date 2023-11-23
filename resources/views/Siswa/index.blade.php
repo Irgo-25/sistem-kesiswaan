@@ -8,7 +8,7 @@
 
 
     <div class="relative overflow-x-auto my-3 shadow-md rounded-md ">
-        <table class="w-full text-base font-Lexend">
+        <table class="w-full table-auto text-base font-Lexend">
             <thead class=" bg-primary">
                 <tr>
                     <th class="py-2 font-[400] border-r-2 border-slate-600">NIS</th>
@@ -25,12 +25,12 @@
             <tbody class="text-left">
                 @forelse ($data as $item)
                     <tr class="hover:bg-slate-300 ">
-                        <th class="pl-2 py-3 font-[300] border-r-2 border-slate-600"> {{ $item->NIS }} </th>
-                        <th class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->nama_siswa }}</th>
-                        <th class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->tempat_lahir }}</th>
-                        <th class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->tanggal_lahir }}</th>
-                        <th class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->umur }}</th>
-                        <th>
+                        <td class="pl-2 py-3 font-[300] border-r-2 border-slate-600"> {{ $item->NIS }} </td>
+                        <td class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->nama_siswa }}</td>
+                        <td class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->tempat_lahir }}</td>
+                        <td class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->tanggal_lahir }}</td>
+                        <td class="pl-2 py-3 font-[300] border-r-2 border-slate-600">{{ $item->umur }}</td>
+                        <td>
                             <a href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white"
                                     class="w-6 h-6 bg-red-600 rounded-md p-1">
@@ -48,10 +48,14 @@
                                 </svg>
                             </a>
 
-                        </th>
+                        </td>
                     </tr>
-                @empty
-                    <p class="font-Lexend font-[400] text-lg">Data Kosong...!!!!</p>
+                    @empty
+                    <tr class="hover:bg-slate-300 ">
+                            <td colspan="6">
+                                <p class="text-center font-Lexend font-[400] text-lg">---Data Kosong---</p>
+                            </td>
+                    </tr>
                 @endforelse
             </tbody>
         </table>

@@ -25,6 +25,8 @@ Route::get('/register', function () {
         'title' => "Registrasi"
     ]);
 });
-Route::get('/Keuangan', function () {return view('Keuangan.index');});
+Route::get('/Keuangan', function () {
+    return view('Keuangan.index');
+});
 
-Route::resource('/Siswa', SiswaController::class);
+Route::resource('Siswa', SiswaController::class);

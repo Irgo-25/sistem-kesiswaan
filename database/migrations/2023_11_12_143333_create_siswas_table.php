@@ -18,7 +18,7 @@ class CreateSiswasTable extends Migration
             $table->string('nama_siswa', 50);
             $table->string('tempat_lahir', 50);
             $table->date('tanggal_lahir');
-            $table->integer('umur', autoIncrement:false);
+            $table->integer('umur');
             $table->timestamps();
         });
     }

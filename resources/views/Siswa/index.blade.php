@@ -3,7 +3,8 @@
 @section('content')
     <div class="flex justify-between items-start">
         <h3 class="text-3xl font-Lexend font-[500]">Halaman Kesiswaan</h3>
-        <a href="Siswa/create" class="p-3 mr-5 mt-8 -mb-3 font-Lexend bg-second text-white rounded-md">Tambah</a>
+        <a href="{{ route('Siswa.create') }}"
+            class="p-3 mr-5 mt-8 -mb-1 font-Lexend bg-second text-white rounded-md">Tambah</a>
     </div>
 
 
@@ -50,11 +51,11 @@
 
                         </td>
                     </tr>
-                    @empty
+                @empty
                     <tr class="hover:bg-slate-300 ">
-                            <td colspan="6">
-                                <p class="text-center font-Lexend font-[400] text-lg">---Data Kosong---</p>
-                            </td>
+                        <td colspan="6">
+                            <p class="text-center font-Lexend font-[400] text-lg">---Data Kosong---</p>
+                        </td>
                     </tr>
                 @endforelse
             </tbody>

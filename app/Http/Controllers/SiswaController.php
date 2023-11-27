@@ -17,7 +17,7 @@ class SiswaController extends Controller
         $data = Siswa::latest()->get();
         return view('Siswa.index', [
             'title' => 'Dashboard',
-            'data'=> $data
+            'data' => $data
         ]);
     }
 
@@ -29,7 +29,7 @@ class SiswaController extends Controller
     public function create()
     {
         return view('Siswa.create', [
-            'title'=> 'Tambah Siswa'
+            'title' => 'Tambah Siswa'
         ]);
     }
 
@@ -42,12 +42,16 @@ class SiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'NIS'=> ['require', 'string','index'],
-            'nama_siswa' => ['require', 'string', 'max:60'],
-            'tempat_lahir' => ['require', 'string', 'max:50'],
-            'tanggal_lahir' => ['require', 'date'],
-            'umur' => ['required', 'interger']
+            'NIS' => 'required|max:20|unique:siswa',
+            'nama_siswa' => ['required'],
+            'tempat_lahir' => ['required'],
+            'tanggal_lahir' => ['required', 'date'],
+            'umur' => ['required'],
         ]);
+
+        $data = $request->except(['_token']);
+        Siswa::insert($data);
+        return redirect()->route('Siswa.index');
     }
 
     /**

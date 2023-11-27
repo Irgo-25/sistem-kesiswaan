@@ -18,7 +18,7 @@
                 class="max-w-[4rem] -ml-6 mt-4 md:max-w-[10rem]">
 
             <div
-                class="bg-[rgba(255,187,92,0.5)] rounded-lg pt-5 pb-5 pr-6 pl-4 -ml-6 md:rounded-lg md:pb-5 pt-5 pr-6 pl-4">
+                class="bg-[rgba(255,187,92,0.5)] rounded-lg pt-5 pb-5 pr-6 pl-4 -ml-6 md:rounded-lg md:pb-5 md:pt-5 md:pr-6 md:pl-4">
                 <form class="space-y-5" action="">
                     @csrf
                     <div>

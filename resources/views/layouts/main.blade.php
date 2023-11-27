@@ -22,7 +22,7 @@
 
     <div class="ml-56 mt-24 mr-4">
         @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="p-3 bg-red-600 mb-6 max-w-4xl rounded-md">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>

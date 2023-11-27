@@ -29,4 +29,9 @@ Route::get('/Keuangan', function () {
     return view('Keuangan.index');
 });
 
-Route::resource('Siswa', SiswaController::class);
+// Route::get('/Siswa', [SiswaController::class,'index'])->name('Siswa');
+// Route::get('/Siswa/create', [SiswaController::class,'create']);
+// Route::post('/Siswa/store', [SiswaController::class,'store']);
+// Route::post('/Siswa/destroy/{NIS}', [SiswaController::class,'destroy']);
+
+route::resource('Siswa', SiswaController::class);

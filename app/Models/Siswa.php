@@ -11,7 +11,8 @@ class Siswa extends Model
     use HasFactory;
 
     protected $table = 'siswa';
-    protected $primary = 'NIS';
+    protected $primaryKey= 'NIS';
+    public $incrementing = false;
 
     protected $fillable = [
         'NIS',

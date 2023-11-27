@@ -16,6 +16,7 @@ class SiswaController extends Controller
     {
         $data = Siswa::latest()->get();
         return view('Siswa.index', [
+
             'title' => 'Dashboard',
             'data' => $data
         ]);
@@ -43,14 +44,13 @@ class SiswaController extends Controller
     {
         $request->validate([
             'NIS' => 'required|max:20|unique:siswa',
-            'nama_siswa' => ['required'],
-            'tempat_lahir' => ['required'],
+            'nama_siswa' => ['required', 'string'],
+            'tempat_lahir' => ['required', 'string'],
             'tanggal_lahir' => ['required', 'date'],
-            'umur' => ['required'],
+            'umur' => ['required', 'interger'],
         ]);
-
-        $data = $request->except(['_token']);
-        Siswa::insert($data);
+        $data = $request->all();
+        Siswa::create($data);
         return redirect()->route('Siswa.index');
     }
 
@@ -71,9 +71,12 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($NIS)
     {
-        //
+        return view('Siswa.edit', [
+            'title' => "Edit Siswa",
+            'item' => Siswa::find($NIS)
+        ]);
     }
 
     /**
@@ -83,9 +86,19 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $NIS)
     {
-        //
+        $request->validate([
+            'nama_siswa' => ['required', 'string'],
+            'tempat_lahir' => ['required', 'string'],
+            'tanggal_lahir' => ['required', 'date'],
+            'umur' => ['required', 'integer'],
+        ]);
+
+        $data = $request->all();
+        $siswa = Siswa::find($NIS);
+        $siswa->update($data);
+        return redirect()->route('Siswa.index');
     }
 
     /**
@@ -94,8 +107,11 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($NIS)
     {
-        //
+
+        $Siswa = Siswa::find($NIS);
+        $Siswa->delete();
+        return redirect()->route('Siswa.index');
     }
 }

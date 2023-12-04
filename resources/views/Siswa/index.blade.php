@@ -61,6 +61,7 @@
             </tr>
             @endforelse
         </tbody>
+        {{ $data->links() }}
     </table>
 </div>
 @endsection

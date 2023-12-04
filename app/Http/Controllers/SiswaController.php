@@ -4,29 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    // untuk memanggil dan menampilkan halaman index di folder Siswa
     public function index()
     {
-        $data = Siswa::latest()->get();
+        $query = DB::table('Siswa');   
+        $data = $query->latest()->paginate(10);
         return view('Siswa.index', [
 
             'title' => 'Dashboard',
+            // membuat variabel yang mengambil dari database
             'data' => $data
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // fungsi untuk menampilkan form yang berada dalam folder view
     public function create()
     {
         return view('Siswa.create', [
@@ -34,43 +29,24 @@ class SiswaController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Fungsi untuk menyimpan data setelah user input di form
     public function store(Request $request)
     {
+        // membuat validasi untuk aturan penulisan di store
         $request->validate([
             'NIS' => 'required|max:20|unique:siswa',
             'nama_siswa' => ['required', 'string'],
             'tempat_lahir' => ['required', 'string'],
             'tanggal_lahir' => ['required', 'date'],
-            'umur' => ['required', 'interger'],
+            'umur' => ['required', 'integer'],
         ]);
+        // untuk memanggil validasi dan membuat data ke database
         $data = $request->all();
         Siswa::create($data);
+        // mengembalikan ke tampilan view jika berhasil
         return redirect()->route('Siswa.index');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //fungsi untuk menampilkan form edit di folder view file Siswa.edit
     public function edit($NIS)
     {
         return view('Siswa.edit', [
@@ -79,34 +55,22 @@ class SiswaController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $NIS)
     {
+        // membuat validasi untuk aturan penulisan di store
         $request->validate([
             'nama_siswa' => ['required', 'string'],
             'tempat_lahir' => ['required', 'string'],
             'tanggal_lahir' => ['required', 'date'],
             'umur' => ['required', 'integer'],
         ]);
-
+    // untuk memanggil validasi dan update data ke database sesuai NIS 
         $data = $request->all();
         $siswa = Siswa::find($NIS);
         $siswa->update($data);
         return redirect()->route('Siswa.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Fungsi untuk delete siswa
     public function destroy($NIS)
     {
 

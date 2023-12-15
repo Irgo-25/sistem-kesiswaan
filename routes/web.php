@@ -3,6 +3,7 @@
 use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +16,10 @@ use App\Http\Controllers\SiswaController;
 |
 */
 
+
 Route::get('/', function () {
-    return view('login', [
-        'title' => "Sistem Kesiswaan"
-    ]);
-});
-Route::get('/register', function () {
-    return view('register', [
-        'title' => "Registrasi"
+    return view('loginReg.index', [
+        'title' => "Login"
     ]);
 });
 Route::get('/Keuangan', function () {
@@ -33,5 +30,5 @@ Route::get('/Keuangan', function () {
 // Route::get('/Siswa/create', [SiswaController::class,'create']);
 // Route::post('/Siswa/store', [SiswaController::class,'store']);
 // Route::post('/Siswa/destroy/{NIS}', [SiswaController::class,'destroy']);
-
-route::resource('Siswa', SiswaController::class);
+Route::resource('Siswa', SiswaController::class);
+Route::resource('Registrasi', RegisterController::class);

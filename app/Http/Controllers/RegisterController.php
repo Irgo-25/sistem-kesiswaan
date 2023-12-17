@@ -28,15 +28,15 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $RequestValidate = $request->validate([
-            'name' => ['required', 'max:255', 'min:4', 'unique:users'],
-            'email' => ['required', 'min:3', 'email:dns', 'unique:users'],
-            'password' => ['required', 'min:5']
-        ]);
-        $RequestValidate['password'] = Hash::make('password');
-        User::create($RequestValidate);
-        return redirect('/login')->with('success', 'User Berhasil Dibuat, Silahkan Login');
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'max:255', 'unique:users'],
+            'password' =>['required', 'min:8'],
+         ]);
+        $data = $request->all();
+        $data['password'] = Hash::make($data['password']);
+        User::create($data);
+        return redirect('/')->with('success', 'User Berhasil Dibuat, Silahkan Login');
     }
-
 
 }

@@ -1,12 +1,12 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
-use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Middleware\Authenticate;
-use Illuminate\Routing\Router;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +32,8 @@ Route::resource('Siswa', SiswaController::class);
 Route::get('Registrasi', [RegisterController::class, 'index'])->name('Registrasi');
 Route::post('Registrasi', [RegisterController::class, 'store'])->name('Registrasi');
 
-Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'authenticate'])->name('login');
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('postlogin', [LoginController::class, 'authenticate'])->name('postlogin');
+
+Route::get('Dashboard', [DashboardController::class, 'index'])->name('Dashboard');
 

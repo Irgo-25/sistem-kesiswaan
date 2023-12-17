@@ -36,7 +36,7 @@
                             placeholder="Masukan Username" required value="{{old('name')}}">
                     </div>
                     <div>
-                        <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
                         <input type="email" name="email" id="email"
                             class="bg-gray-50 border border-red-600 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-1 pr-3 sm:p-2.5 md:pr-28"
                             placeholder="Masukan Email" required value="{{old('email')}}">

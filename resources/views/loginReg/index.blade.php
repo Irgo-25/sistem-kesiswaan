@@ -54,14 +54,14 @@
                 class="max-w-[4rem] -ml-6 mt-4 md:max-w-[10rem]">
             <div
                 class="bg-[rgba(255,187,92,0.5)] rounded-lg pt-5 pb-5 pr-6 pl-4 -ml-6 md:rounded-lg md:pb-5 md:pt-5 md:pr-6 md:pl-4">
-                <form class="space-y-5" action="{{route('login')}}" method="post">
+                <form class="space-y-5" action="{{ route('postlogin') }}" method="post">
                     @csrf
                     @method('POST')
                     <div>
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
                         <input type="name" name="name" id="name"
                             class="bg-gray-50 border border-red-600 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-1 pr-3 sm:p-2.5 md:pr-28"
-                            placeholder="Masukan username" required>
+                            placeholder="Masukan Username" required>
                     </div>
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
@@ -73,11 +73,11 @@
                         <button type="submit" class="mb-2 p-1.5 bg-red-600 rounded-md md:p-2.5">
                             Login
                         </button>
-                        <p>Belum Punya Akun? <a href="{{ route('Registrasi') }}"
-                                class="text-blue-600">Register</a>
-                        </p>
                     </div>
                 </form>
+                <p>Belum Punya Akun? <a href="{{ route('Registrasi') }}"
+                        class="text-blue-600">Register</a>
+                </p>
             </div>
             <img src="{{ 'assets/logo-smk.png' }}" alt="" class="max-w-[3rem] -ml-6  md:max-w-[10rem]">
         </div>

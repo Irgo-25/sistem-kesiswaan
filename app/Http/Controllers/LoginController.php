@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 
 class LoginController extends Controller
@@ -22,18 +23,21 @@ class LoginController extends Controller
 
         ]);
 
-        if (Auth::guard('Kesiswaan')->attempt($credentials)) {
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect('Siswa');
-        } elseif (Auth::guard('Siswa')->attempt($credentials)) {
-            $request->session()->regenerate();
-
             return redirect('Dashboard');
         } else {
             return back()->with([
                 'ErrorLogin' => 'Login Gagal..',
             ]);
         }
+    }
+    public function Logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+
     }
 }

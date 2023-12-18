@@ -1,1 +1,4 @@
-<h1>Selamat Datang</h1>
+@extends('layouts.main')
+@section('content')
+    <h1>Dashboard</h1>
+@endsection

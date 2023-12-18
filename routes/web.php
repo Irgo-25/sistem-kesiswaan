@@ -29,7 +29,7 @@ Route::get('/Keuangan', function () {
 // Route::post('/Siswa/destroy/{NIS}', [SiswaController::class,'destroy']);
 
 // Siswa
-Route::middleware(['auth:sanctum', 'Kesiswaan'])->resource('Siswa', SiswaController::class)->names('Siswa');
+Route::middleware('Kesiswaan')->resource('Siswa', SiswaController::class)->names('Siswa');
 
 // Registrasi
 Route::middleware('guest')->get('Registrasi', [RegisterController::class, 'index'])->name('Registrasi');
@@ -38,6 +38,8 @@ Route::post('Registrasi', [RegisterController::class, 'store'])->name('Registras
 // Login
 Route::middleware('guest')->get('/', [LoginController::class, 'index'])->name('/');
 Route::post('login', [LoginController::class, 'authenticate'])->name('login.authenticate');
+// Logout
+Route::middleware('Kesiswaan')->post('Logout', [LoginController::class, 'Logout'])->name('Logout');
 
 // Dashboard
-Route::middleware(['auth:sanctum', 'Siswa'])->get('Dashboard', [DashboardController::class, 'index'])->name('Dashboard');
+Route::middleware('Kesiswaan')->get('Dashboard', [DashboardController::class, 'index'])->name('Dashboard');

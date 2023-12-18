@@ -16,7 +16,7 @@ class SiswaController extends Controller
         $data = $query->latest()->paginate(10);
         return view('Siswa.index', [
 
-            'title' => 'Dashboard',
+            'title' => 'Kesiswaan',
             // membuat variabel yang mengambil dari database
             'data' => $data
         ]);

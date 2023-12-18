@@ -5,8 +5,16 @@
     <div class="absolute bg-yellow-500 left-[40rem] bottom-0 pb-3 pt-3 px-9 rounded-t-md">
         <h4 class="text-lg font-medium font-Kanit">SMK One Piece</h4>
     </div>
+<form action="{{route('Logout')}}" method="POST">
+    @csrf
     <div>
-        <h4>logout</h4>
+        <button  class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+              </svg>
+            <h4 class="py-1">logout</h4>
+        </button>
     </div>
+</form>
 </div>
 

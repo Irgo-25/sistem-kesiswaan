@@ -27,13 +27,17 @@ Route::get('/Keuangan', function () {
 // Route::get('/Siswa/create', [SiswaController::class,'create']);
 // Route::post('/Siswa/store', [SiswaController::class,'store']);
 // Route::post('/Siswa/destroy/{NIS}', [SiswaController::class,'destroy']);
-Route::resource('Siswa', SiswaController::class);
 
-Route::get('Registrasi', [RegisterController::class, 'index'])->name('Registrasi');
+// Siswa
+Route::middleware(['auth:sanctum', 'Kesiswaan'])->resource('Siswa', SiswaController::class)->names('Siswa');
+
+// Registrasi
+Route::middleware('guest')->get('Registrasi', [RegisterController::class, 'index'])->name('Registrasi');
 Route::post('Registrasi', [RegisterController::class, 'store'])->name('Registrasi');
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('postlogin', [LoginController::class, 'authenticate'])->name('postlogin');
+// Login
+Route::middleware('guest')->get('/', [LoginController::class, 'index'])->name('/');
+Route::post('login', [LoginController::class, 'authenticate'])->name('login.authenticate');
 
-Route::get('Dashboard', [DashboardController::class, 'index'])->name('Dashboard');
-
+// Dashboard
+Route::middleware(['auth:sanctum', 'Siswa'])->get('Dashboard', [DashboardController::class, 'index'])->name('Dashboard');

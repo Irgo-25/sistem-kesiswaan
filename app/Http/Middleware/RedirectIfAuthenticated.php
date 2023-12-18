@@ -26,6 +26,9 @@ class RedirectIfAuthenticated
                 return redirect(RouteServiceProvider::HOME);
             }
         }
+        if (Auth::guard($guard)->check()) {
+            return redirect(RouteServiceProvider::HOME_Siswa);
+        }
 
         return $next($request);
     }

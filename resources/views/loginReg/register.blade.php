@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <section class="bg-[url('/assets/sekolah.svg')] md:bg-no-repeat bg-center -z-10">
+    <section class="bg-[url('/assets/sekolah.jpg')] md:bg-no-repeat bg-center -z-10">
         @if ($errors->any())
         <div class="p-3 bg-red-600 mb-6 max-w-4xl rounded-md">
             <ul>
@@ -21,11 +21,7 @@
             </ul>
         </div>
         @endif
-        <div class="flex items-center justify-between px-6 py-8 h-screen">
-
-            <img src="{{ 'assets/logo-kemendikbud.png' }}" alt="background"
-                class="max-w-[4rem] -ml-2 md:max-w-[10rem] md:-ml-4 mt-4">
-
+        <div class="flex flex-col items-center justify-center px-6 py-8 h-screen">
             <div class="bg-[rgba(255,187,92,0.5)] rounded-lg -ml-6 md:rounded-lg md:pb-5 pt-5 pr-6 pl-4">
                 <form class="space-y-5" action="{{ route('Registrasi') }}" method="POST">
                     @csrf
@@ -54,7 +50,8 @@
                     </div>
                 </form>
             </div>
-            <img src="{{ 'assets/logo-smk.png' }}" alt="" class="max-w-[2rem] -ml-6  md:max-w-[10rem]">
+            <img src="{{ 'assets/logo-kemendikbud.png' }}" alt="background"
+                class="max-w-[4rem] -ml-2 md:max-w-[10rem] md:-ml-4 mt-4">
         </div>
     </section>
 </body>

@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('Dashboard');
+            return redirect('Dashboard')->with('SuccessLogin', 'Selamat Datang Di Sistem Kesiswaan');
         } else {
             return back()->with([
                 'ErrorLogin' => 'Login Gagal..',
@@ -37,7 +37,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/')->with('Logout', 'Anda Berhasil Logout');
 
     }
 }

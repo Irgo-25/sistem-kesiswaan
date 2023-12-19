@@ -2,9 +2,8 @@
     <a href="{{url('Siswa')}}">
         <img src="{{ '/assets/logo-kemendikbud.png' }}" alt="logo" class="w-12 h-10">
     </a>
-    <div class="absolute bg-yellow-500 left-[40rem] bottom-0 pb-3 pt-3 px-9 rounded-t-md">
-        <h4 class="text-lg font-medium font-Kanit">SMK One Piece</h4>
-    </div>
+        <img src="{{ 'assets/logo-smk.png' }}" alt="background"
+        class="max-w-[4rem] -ml-5 mt-2 md:max-w-[4rem]">
 <form action="{{route('Logout')}}" method="POST">
     @csrf
     <div>

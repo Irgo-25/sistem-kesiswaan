@@ -44,7 +44,7 @@ class SiswaController extends Controller
         $data = $request->all();
         Siswa::create($data);
         // mengembalikan ke tampilan view jika berhasil
-        return redirect()->route('Siswa.index');
+        return redirect()->route('Siswa.index')->with('SuccessAdd', 'Berhasil ditambahkan');
     }
     //fungsi untuk menampilkan form edit di folder view file Siswa.edit
     public function edit($NIS)

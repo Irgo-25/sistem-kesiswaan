@@ -13,7 +13,7 @@ class SiswaController extends Controller
     public function index()
     {
         $query = DB::table('Siswa');   
-        $data = $query->latest()->paginate(10);
+        $data = $query->latest()->paginate(3);
         return view('Siswa.index', [
 
             'title' => 'Kesiswaan',

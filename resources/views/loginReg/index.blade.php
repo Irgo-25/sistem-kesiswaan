@@ -79,9 +79,9 @@
                     @method('POST')
                     <div>
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Username</label>
-                        <input type="text" name="name" id="name"
+                        <input type="text" name="name" id="name" 
                             class="bg-gray-50 border border-red-600 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-1 pr-3 sm:p-2.5 md:pr-28"
-                            placeholder="Masukan Username" required>
+                            placeholder="Masukan Username" required value="{{old('name')}}">
                     </div>
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>

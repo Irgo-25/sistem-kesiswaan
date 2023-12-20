@@ -44,7 +44,7 @@ class SiswaController extends Controller
         $data = $request->all();
         Siswa::create($data);
         // mengembalikan ke tampilan view jika berhasil
-        return redirect()->route('Siswa.index')->with('SuccessAdd', 'Berhasil ditambahkan');
+        return redirect()->route('Siswa.index')->with('SuccessAdd', 'Siswa Berhasil Ditambahkan');
     }
     //fungsi untuk menampilkan form edit di folder view file Siswa.edit
     public function edit($NIS)
@@ -68,7 +68,7 @@ class SiswaController extends Controller
         $data = $request->all();
         $siswa = Siswa::find($NIS);
         $siswa->update($data);
-        return redirect()->route('Siswa.index');
+        return redirect()->route('Siswa.index')->with('SuccessEdit', 'Data user berhasil diperbarui');
     }
     // Fungsi untuk delete siswa
     public function destroy($NIS)
@@ -76,6 +76,6 @@ class SiswaController extends Controller
 
         $Siswa = Siswa::find($NIS);
         $Siswa->delete();
-        return redirect()->route('Siswa.index');
+        return redirect()->route('Siswa.index')->with('SuccessDelete', 'Data user berhasil dihapus');
     }
 }

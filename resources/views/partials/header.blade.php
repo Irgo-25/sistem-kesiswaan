@@ -2,7 +2,7 @@
     <a href="{{url('Siswa')}}">
         <img src="{{ '/assets/logo-kemendikbud.png' }}" alt="logo" class="w-12 h-10">
     </a>
-        <img src="{{ 'assets/logo-smk.png' }}" alt="background"
+        <img src="{{ '/assets/logo-smk.png' }}" alt="background"
         class="max-w-[4rem] -ml-5 mt-2 md:max-w-[4rem]">
 <form action="{{route('Logout')}}" method="POST">
     @csrf

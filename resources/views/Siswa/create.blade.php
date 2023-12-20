@@ -46,7 +46,7 @@
             </button>
             <a class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 
                         focus:outline-none focus:ring-red-300 font-medium rounded-lg text-md w-full  sm:w-auto px-5 py-2.5 text-center  absolute right-6 top-56"
-                href="#" type="button"> Batal
+                href="{{route('Siswa.index')}}" type="button"> Batal
             </a>
         </form>
     </div>
